@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @Immutable
 @Entity
-@Table(name="employees")
+@Table(name="contacts")
 public class Employee {
 
     @Id
@@ -32,7 +32,7 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "phone_no")
+    @Column(name = "phone") // it should be phone_no for the main app
     private String phoneNo;
 
     @Column(name = "phone_no_two")
