@@ -11,7 +11,7 @@ public class VCardService {
         return "BEGIN:VCARD\n" +
                 "VERSION:3.0\n" +
                 "FN:" + employee.getFullName() + "\n" +
-                "TEL:" + employee.getPhoneNumber() + "\n" +
+                "TEL:" + employee.getPhoneNo() + "\n" +
                 "EMAIL:" + employee.getEmail() + "\n" +
                 "END:VCARD";
     }
