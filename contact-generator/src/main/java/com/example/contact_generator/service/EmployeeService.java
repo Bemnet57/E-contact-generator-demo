@@ -49,7 +49,14 @@ public class EmployeeService {
                 employee.getId(),
                 employee.getFullName(),
                 employee.getEmail(),
-                employee.getPhoneNumber()
+//                employee.getPhoneNumber()
+                employee.getPhoneNo()
         );
+    }
+
+    public Employee getEmployeeEntityById(Long id) {
+
+        return employeeRepository.findById(id)
+                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 }
