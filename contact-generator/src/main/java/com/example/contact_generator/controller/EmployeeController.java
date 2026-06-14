@@ -93,5 +93,20 @@ public class EmployeeController {
                 .body(qrCode);
     }
 
+    // QR Endpoint
+    @GetMapping("/{id}/qrcode")
+    public ResponseEntity<byte[]> getEmployeeQrCode(@PathVariable Long id) {
+
+        Employee employee = employeeService.getEmployeeEntityById(id);
+
+        String vCard = vCardService.buildVCard(employee);
+
+        byte[] qrCode = qrCodeService.generateQRCode(vCard);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.IMAGE_PNG_VALUE)
+                .body(qrCode);
+    }
+
 
 }
