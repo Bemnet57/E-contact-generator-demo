@@ -5,14 +5,21 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class VCardService {
-
     public String buildVCard(Employee employee) {
 
-        return "BEGIN:VCARD\n" +
-                "VERSION:3.0\n" +
-                "FN:" + employee.getFullName() + "\n" +
-                "TEL:" + employee.getPhoneNo() + "\n" +
-                "EMAIL:" + employee.getEmail() + "\n" +
-                "END:VCARD";
+        return """
+            BEGIN:VCARD
+            VERSION:3.0
+            N:%s;;;;
+            FN:%s
+            TEL;TYPE=CELL:%s
+            EMAIL;TYPE=WORK:%s
+            END:VCARD
+            """.formatted(
+                employee.getFullName(),
+                employee.getFullName(),
+                employee.getPhoneNo(),
+                employee.getEmail()
+        );
     }
 }
