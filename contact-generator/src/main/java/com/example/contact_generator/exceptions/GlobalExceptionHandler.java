@@ -24,4 +24,21 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(error);
     }
+
+    @ExceptionHandler(QRCodeGenerationException.class)
+    public ResponseEntity<ErrorResponse>
+    handleQRCodeGenerationException(
+            QRCodeGenerationException ex) {
+
+        ErrorResponse error =
+                new ErrorResponse(
+                        LocalDateTime.now(),
+                        500,
+                        ex.getMessage()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(error);
+    }
 }
