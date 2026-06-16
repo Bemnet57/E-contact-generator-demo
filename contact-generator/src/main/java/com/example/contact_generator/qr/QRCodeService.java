@@ -1,4 +1,5 @@
 package com.example.contact_generator.qr;
+import com.example.contact_generator.exceptions.QRCodeGenerationException;
 import org.springframework.stereotype.Service;
 
 import com.google.zxing.BarcodeFormat;
@@ -37,8 +38,9 @@ public class QRCodeService {
 
             return outputStream.toByteArray();
 
-        } catch (Exception e) {
-            throw new RuntimeException(
+        }
+        catch (Exception e) {
+            throw new QRCodeGenerationException(
                     "Failed to generate QR code"
             );
         }
