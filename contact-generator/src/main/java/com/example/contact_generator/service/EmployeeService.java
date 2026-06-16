@@ -18,9 +18,6 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-//    public List<Employee> getAllEmployees() {
-//        return employeeRepository.findAll();
-//    }
     public List<EmployeeResponseDTO> getAllEmployees() {
 
         return employeeRepository.findAll()
@@ -28,10 +25,7 @@ public class EmployeeService {
                 .map(this::mapToDTO)
                 .toList();
     }
-//    public Employee getEmployeeById(Long id) {
-//        return employeeRepository.findById(id)
-//                .orElseThrow(() -> new RuntimeException("Employee not found"));
-//    }
+
     public EmployeeResponseDTO getEmployeeById(Long id) {
 
         Employee employee = employeeRepository.findById(id)
@@ -40,8 +34,17 @@ public class EmployeeService {
         return mapToDTO(employee);
 }
 
-    public List<Employee> searchEmployees(String name) {
-        return employeeRepository.findByFullNameContainingIgnoreCase(name);
+    public List<EmployeeResponseDTO> searchEmployees(String name) {
+
+        return employeeRepository
+                .findByFirstNameContainingIgnoreCaseOrMiddleNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
+                        name,
+                        name,
+                        name
+                )
+                .stream()
+                .map(this::mapToDTO)
+                .toList();
     }
 
     private EmployeeResponseDTO mapToDTO(Employee employee) {
