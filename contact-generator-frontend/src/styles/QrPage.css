@@ -1,0 +1,139 @@
+.qr-container {
+
+    background: white;
+
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+
+    text-align: center;
+
+}
+
+.qr-container img {
+
+    margin: 30px 0;
+
+    width: 280px;
+
+}
+
+.employee-info {
+
+    margin: 20px 0;
+
+}
+
+.back-button {
+
+    margin-bottom: 20px;
+
+}
+
+/*employee contact card*/
+.qr-container {
+
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+
+    text-align: center;
+}
+
+.qr-container h1 {
+
+    color: #005AA9;
+
+    margin-bottom: 30px;
+}
+
+.employee-info {
+
+    margin-bottom: 25px;
+
+    line-height: 1.8;
+}
+
+.employee-info h2 {
+
+    margin-bottom: 15px;
+}
+
+.qr-container img {
+
+    width: 280px;
+
+    margin: 20px auto;
+
+    display: block;
+}
+
+.back-button {
+
+    float: left;
+
+    background: transparent;
+
+    border: none;
+
+    color: #005AA9;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+/*button group for the qr page*/
+.button-group {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.button-group button {
+
+    background: #005AA9;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.button-group button:hover {
+
+    background: #004B8D;
+}
+
+/*boarder for the qr image*/
+
+.qr-container img {
+
+    border: 8px solid #f5f5f5;
+
+    border-radius: 10px;
+}
