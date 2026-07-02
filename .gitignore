@@ -25,3 +25,6 @@ replay_pid*
 
 # Ignore JetBrains IDE configuration directory
 .idea/
+
+#application.properties
+contact-generator/src/main/resources/
