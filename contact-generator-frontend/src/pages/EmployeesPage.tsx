@@ -9,7 +9,6 @@ import {
     searchEmployees
 } from "../services/employeeService";
 
-// import { Employee } from "../types/Employee";
 import type { Employee } from '../types/Employee';
 
 function EmployeesPage() {
@@ -68,16 +67,17 @@ function EmployeesPage() {
     return (
         <div className="container">
 
-            <h1>Employee Directory</h1>
+            <h1>Employee Contact Directory</h1>
 
-            <EmployeeSearch
-                onSearch={handleSearch}
-            />
+            <div className="toolbar">
+                <EmployeeSearch
+                    onSearch={handleSearch}
+                />
 
-            <button onClick={loadEmployees}>
-                Show All
-            </button>
-
+                <button className= 'show-all-btn' onClick={loadEmployees}>
+                    Show All
+                </button>
+            </div>
             <EmployeeList
                 employees={employees}
                 onGenerateQr={

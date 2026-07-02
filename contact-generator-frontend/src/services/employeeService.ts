@@ -20,3 +20,11 @@ export const getQrCodeUrl = (
 ) => {
     return `${API_URL}/${id}/qrcode`;
 };
+
+export const getEmployeeById = (
+    id: number
+) => {
+    return axios.get(
+        `${API_URL}/${id}`
+    );
+};
