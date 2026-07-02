@@ -1,5 +1,4 @@
 import EmployeeCard from "./EmployeeCard";
-// import { Employee } from "../../types/Employee";
 import type { Employee } from '../../types/Employee';
 
 interface EmployeeListProps {
@@ -13,7 +12,7 @@ function EmployeeList({
                       }: EmployeeListProps) {
 
     return (
-        <>
+        <div className="employee-grid">
             {employees.map(employee => (
                 <EmployeeCard
                     key={employee.id}
@@ -21,7 +20,7 @@ function EmployeeList({
                     onGenerateQr={onGenerateQr}
                 />
             ))}
-        </>
+        </div>
     );
 }
 

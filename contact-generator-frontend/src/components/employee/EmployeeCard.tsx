@@ -1,4 +1,3 @@
-//import { Employee } from "../../types/Employee";
 import type { Employee } from '../../types/Employee';
 import "../../styles/EmployeeCard.css";
 
